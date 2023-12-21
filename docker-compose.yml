@@ -12,7 +12,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
-      - traefik.http.routers.webserver.rule=Host(`motherbot.store`) || Host(`www.motherbot.store`)
+      - traefik.http.routers.webserver.rule=Host(`motherbot.store`)
       - traefik.http.services.webserver.loadBalancer.server.port=80
       - traefik.http.middlewares.webserver-redirect.redirectRegex.regex=^(https?://)www.motherbot.store/(.*)$$
       - traefik.http.middlewares.webserver-redirect.redirectRegex.replacement=$${1}motherbot.store/$${2}
