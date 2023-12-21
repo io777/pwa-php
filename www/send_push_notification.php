@@ -8,10 +8,6 @@ use Minishlink\WebPush\Subscription;
 // because you already stored it (cf. push_subscription.php)
 $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
 
-$fp = fopen("SUB.txt", "w");
-fwrite($fp, serialize($subscription));
-fclose($fp);
-
 $auth = array(
     'VAPID' => array(
         'subject' => 'mailto:me@website.com',
@@ -19,10 +15,6 @@ $auth = array(
         'privateKey' => file_get_contents(__DIR__ . '/keys/private_key.txt'), // in the real world, this would be in a secret file
     ),
 );
-
-$fp = fopen("AUTH.txt", "w");
-fwrite($fp, serialize($auth));
-fclose($fp);
 
 $webPush = new WebPush($auth);
 
@@ -36,12 +28,6 @@ $endpoint = $report->getRequest()->getUri()->__toString();
 
 if ($report->isSuccess()) {
     echo "[v] Message sent successfully for subscription {$endpoint}.";
-    $fp = fopen("SEND.txt", "w");
-    fwrite($fp, "[v] Message sent successfully for subscription {$endpoint}.");
-    fclose($fp);
 } else {
     echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
-    $fp = fopen("SEND_ERROR.txt", "w");
-    fwrite($fp, "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}");
-    fclose($fp);
 }
