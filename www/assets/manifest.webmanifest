@@ -1,0 +1,32 @@
+{
+    "theme_color": "#ffffff",
+    "background_color": "#35c7f6",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "https://motherbot.store/",
+    "name": "\u041d\u041f\u0424 \u0421\u041d\u0413",
+    "short_name": "TEST",
+    "description": "\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u041d\u041f\u0424 \"\u0421\u041d\u0413\"",
+    "icons": [
+        {
+            "src": "/assets/images/pwa_icon/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/pwa_icon/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/pwa_icon/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/pwa_icon/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
