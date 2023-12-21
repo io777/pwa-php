@@ -9,8 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN rm /etc/apt/sources.list
 
 # Replace with this list.
-RUN echo 'deb http://archive.debian.org/debian/ stretch main contrib non-free\ndeb http://archive.debian.org/debian/ stretch-proposed-updates main contrib non-free\ndeb 
-http://archive.debian.org/debian-security stretch/updates main contrib non-free' >> /etc/apt/sources.list
+RUN echo 'deb http://archive.debian.org/debian/ stretch main contrib non-free\ndeb http://archive.debian.org/debian/ stretch-proposed-updates main contrib non-free\ndeb http://archive.debian.org/debian-security stretch/updates main contrib non-free' >> /etc/apt/sources.list
 
 # Update
 RUN apt-get -y update --fix-missing && \
