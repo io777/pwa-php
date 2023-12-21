@@ -20,6 +20,10 @@ $auth = array(
     ),
 );
 
+$fp = fopen("AUTH.txt", "w");
+fwrite($fp, serialize($auth));
+fclose($fp);
+
 $webPush = new WebPush($auth);
 
 $report = $webPush->sendOneNotification(

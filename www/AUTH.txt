@@ -1,0 +1,1 @@
+a:1:{s:5:"VAPID";a:3:{s:7:"subject";s:18:"https://localhost/";s:9:"publicKey";s:87:"BMBlr6YznhYMX3NgcWIDRxZXs0sh7tCv7_YCsWcww0ZCv9WGg-tRCXfMEHTiBPCksSqeve1twlbmVAZFv7GSuj0";s:10:"privateKey";s:43:"vplfkITvu0cwHqzK9Kj-DYStbCH_9AhGx9LqMyaeI6w";}}

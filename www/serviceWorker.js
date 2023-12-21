@@ -1,19 +1,13 @@
-self.addEventListener('push', function (event) {
-    if (!(self.Notification && self.Notification.permission === 'granted')) {
-        return;
-    }
+// BrowserPetsWorker.js
 
-    const sendNotification = body => {
-        // you could refresh a notification badge here with postMessage API
-        const title = "Web Push example";
+self.addEventListener('push', (event) => {
+    let pushMessageJSON = event.data.json();
 
-        return self.registration.showNotification(title, {
-            body,
-        });
-    };
+    console.log(pushMessageJSON);
 
-    if (event.data) {
-        const payload = event.data.json();
-        event.waitUntil(sendNotification(payload.message));
-    }
+    // Our server puts everything needed to show the notification
+    // in our JSON data.
+    event.waitUntil(self.registration.showNotification('123', {
+        body: '123'
+    }));
 });
