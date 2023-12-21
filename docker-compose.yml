@@ -12,15 +12,15 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
-      - traefik.http.routers.frontend.rule=Host(`motherbot.store`) || Host(`www.motherbot.store`)
-      - traefik.http.services.frontend.loadBalancer.server.port=80
-      - traefik.http.middlewares.frontend-redirect.redirectRegex.regex=^(https?://)www.motherbot.store/(.*)$$
-      - traefik.http.middlewares.frontend-redirect.redirectRegex.replacement=$${1}motherbot.store/$${2}
-      - traefik.http.middlewares.frontend-redirect.redirectRegex.permanent=true
-      - traefik.http.routers.frontend.middlewares=frontend-redirect,secure-headers
-      - traefik.http.routers.frontend.entryPoints=https
-      - traefik.http.routers.frontend.tls=true
-      - traefik.http.routers.frontend.tls.certResolver=letsEncrypt
+      - traefik.http.routers.webserver.rule=Host(`motherbot.store`) || Host(`www.motherbot.store`)
+      - traefik.http.services.webserver.loadBalancer.server.port=80
+      - traefik.http.middlewares.webserver-redirect.redirectRegex.regex=^(https?://)www.motherbot.store/(.*)$$
+      - traefik.http.middlewares.webserver-redirect.redirectRegex.replacement=$${1}motherbot.store/$${2}
+      - traefik.http.middlewares.webserver-redirect.redirectRegex.permanent=true
+      - traefik.http.routers.webserver.middlewares=webserver-redirect,secure-headers
+      - traefik.http.routers.webserver.entryPoints=https
+      - traefik.http.routers.webserver.tls=true
+      - traefik.http.routers.webserver.tls.certResolver=letsEncrypt
     links:
       - database
     volumes:
